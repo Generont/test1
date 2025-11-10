@@ -5,6 +5,9 @@ def divide(num1, num2):
     return num1 / num2
 
 
+def get_number_input():
+ value = float(input())
+ return value
 print("=== Math Calculator ===")
 print("Enter first number (num1 ≥ 0):")
 num1 = get_number_input(allow_zero=True)
