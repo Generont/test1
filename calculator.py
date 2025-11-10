@@ -5,9 +5,24 @@ def divide(num1, num2):
     return num1 / num2
 
 
-def get_number_input():
- value = float(input())
- return value
+def get_number_input(allow_zero=True):
+
+    while True:
+        try:
+            value = float(input())  # No prompt text
+        except ValueError:
+            print("  Error: Please enter a valid numeric value!")
+            continue
+
+        if value < 0:
+            print("  Error: Negative numbers are not allowed!")
+            continue
+        
+        if not allow_zero and value == 0:
+            print("  Error: Zero is not allowed for this input!")
+            continue
+
+        return value
 print("=== Math Calculator ===")
 print("Enter first number (num1 ≥ 0):")
 num1 = get_number_input(allow_zero=True)
